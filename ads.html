@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore The Coop Chicken Fingers digital advertising campaign for the new Coop Sauce.">
+  <title>The Coop | Digital Advertisements</title>
+
+  <style>
+    :root {
+      --red: #b93622;
+      --orange: #ff7924;
+      --cream: #fff1d7;
+      --brown: #30180f;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: var(--cream);
+      color: var(--brown);
+    }
+
+    /* HEADER */
+
+    header {
+      background: var(--brown);
+      color: white;
+      text-align: center;
+      padding: 55px 20px;
+    }
+
+    header h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      margin: 0 0 15px;
+      font-weight: 900;
+    }
+
+    header p {
+      font-size: 17px;
+      line-height: 1.6;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    /* MAIN CONTENT */
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 55px 20px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .section-heading p {
+      font-size: 16px;
+      color: #735548;
+    }
+
+    /* AD GRID */
+
+    .ad-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 30px;
+      align-items: stretch;
+    }
+
+    .ad-card {
+      background: white;
+      border: 1px solid #eadbc9;
+      border-radius: 14px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    }
+
+    .ad-card h3 {
+      font-size: 21px;
+      margin: 0 0 8px;
+    }
+
+    .ad-size {
+      color: #777;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    .ad-link {
+      display: inline-block;
+      max-width: 100%;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .ad-link img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: auto;
+      border-radius: 4px;
+      transition: transform 0.25s ease;
+    }
+
+    .ad-link:hover img {
+      transform: scale(1.03);
+    }
+
+    .ad-link:focus-visible {
+      outline: 3px solid var(--orange);
+      outline-offset: 5px;
+    }
+
+    .leaderboard {
+      grid-column: 1 / -1;
+    }
+
+    .ad-instruction {
+      font-size: 14px;
+      color: #777;
+      margin-top: 22px;
+    }
+
+    /* FINAL CTA */
+
+    .cta-section {
+      background: var(--red);
+      color: white;
+      text-align: center;
+      padding: 65px 20px;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(30px, 5vw, 44px);
+      margin: 0 0 15px;
+    }
+
+    .cta-section p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--brown);
+      padding: 17px 30px;
+      border: 2px solid var(--brown);
+      border-radius: 8px;
+      font-weight: 900;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      background: #ff9b50;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--brown);
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: var(--orange);
+      text-decoration: none;
+    }
+
+    /* MOBILE DESIGN */
+
+    @media (max-width: 700px) {
+      .ad-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .leaderboard {
+        grid-column: auto;
+      }
+
+      .container {
+        padding: 35px 15px;
+      }
+
+      .ad-card {
+        padding: 20px 12px;
+      }
+
+      header {
+        padding: 40px 15px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- PAGE HEADER -->
+
+  <header>
+    <h1>THE COOP ADVERTISEMENTS</h1>
+
+    <p>
+      Introducing the New "Coop" Sauce!<br>
+      Check out our digital advertising campaign.
+      Click any advertisement to discover the sauce.
+    </p>
+  </header>
+
+
+  <main class="container">
+
+    <div class="section-heading">
+      <h2>OUR DIGITAL ADS</h2>
+      <p>
+        Four formats. One delicious destination.
+      </p>
+    </div>
+
+
+    <div class="ad-grid">
+
+      <!-- AD 1: 728 x 90 LEADERBOARD -->
+
+      <article class="ad-card leaderboard">
+
+        <h3>Leaderboard Advertisement</h3>
+
+        <p class="ad-size">728 x 90 pixels</p>
+
+        <a href="landing.html" class="ad-link"
+           aria-label="View The Coop Sauce landing page">
+
+          <img
+            src="images/coop-728x90.png"
+            alt="The Coop Sauce Leaderboard Advertisement"
+            width="728"
+            height="90"
+          >
+
+        </a>
+
+        <p class="ad-instruction">
+          Click the ad to visit our landing page.
+        </p>
+
+      </article>
+
+
+      <!-- AD 2: 300 x 250 MEDIUM RECTANGLE -->
+
+      <article class="ad-card">
+
+        <h3>Medium Rectangle Advertisement</h3>
+
+        <p class="ad-size">300 x 250 pixels</p>
+
+        <a href="landing.html" class="ad-link"
+           aria-label="View The Coop Sauce landing page">
+
+          <img
+            src="images/coop-300x250.png"
+            alt="The Coop Sauce Medium Rectangle Advertisement"
+            width="300"
+            height="250"
+          >
+
+        </a>
+
+        <p class="ad-instruction">
+          Click the ad to visit our landing page.
+        </p>
+
+      </article>
+
+
+      <!-- AD 3: 160 x 600 WIDE SKYSCRAPER -->
+
+      <article class="ad-card">
+
+        <h3>Wide Skyscraper Advertisement</h3>
+
+        <p class="ad-size">160 x 600 pixels</p>
+
+        <a href="landing.html" class="ad-link"
+           aria-label="View The Coop Sauce landing page">
+
+          <img
+            src="images/coop-160x600.png"
+            alt="The Coop Sauce Wide Skyscraper Advertisement"
+            width="160"
+            height="600"
+            loading="lazy"
+          >
+
+        </a>
+
+        <p class="ad-instruction">
+          Click the ad to visit our landing page.
+        </p>
+
+      </article>
+
+
+      <!-- AD 4: 300 x 600 HALF PAGE -->
+
+      <article class="ad-card">
+
+        <h3>Half Page Advertisement</h3>
+
+        <p class="ad-size">300 x 600 pixels</p>
+
+        <a href="landing.html" class="ad-link"
+           aria-label="View The Coop Sauce landing page">
+
+          <img
+            src="images/coop-300x600.png"
+            alt="The Coop Sauce Half Page Advertisement"
+            width="300"
+            height="600"
+            loading="lazy"
+          >
+
+        </a>
+
+        <p class="ad-instruction">
+          Click the ad to visit our landing page.
+        </p>
+
+      </article>
+
+    </div>
+
+  </main>
+
+
+  <!-- CALL TO ACTION -->
+
+  <section class="cta-section">
+
+    <h2>READY TO GET SAUCY?</h2>
+
+    <p>
+      Meet the new Coop Sauce and discover
+      your next favorite dipping experience.
+    </p>
+
+    <a href="landing.html" class="button">
+      DISCOVER THE NEW COOP SAUCE
+    </a>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>
+      THE COOP CHICKEN FINGERS
+    </p>
+
+    <p>
+      New "Coop" Sauce Digital Advertising Campaign
+    </p>
+
+    <p>
+      <a href="landing.html">
+        Visit Our Landing Page
+      </a>
+    </p>
+
+  </footer>
+
+</body>
+</html>
