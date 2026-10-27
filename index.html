@@ -1,211 +1,681 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The Coop Chicken Fingers - crispy chicken, golden fries, Texas toast, and signature sauces.">
+<title>The Coop | Chicken Fingers</title>
 
-    <title>Elevate | Welcome</title>
+<style>
+:root {
+  --red: #c6321b;
+  --orange: #ff781d;
+  --cream: #fff0d5;
+  --brown: #32190f;
+  --white: #fffaf1;
+}
 
-    <meta name="description" content="Discover a better way to reach your goals with Elevate. Turn your ideas into meaningful results with simple tools and a fresh perspective.">
+* {
+  box-sizing: border-box;
+}
 
-    <!-- Connect the external CSS stylesheet -->
-    <link rel="stylesheet" href="style.css">
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cream);
+  color: var(--brown);
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  background: var(--brown);
+  padding: 20px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.logo {
+  color: white;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.logo span {
+  color: var(--orange);
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.nav-links a:hover {
+  color: var(--orange);
+}
+
+.hero {
+  min-height: 630px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #fae8cb;
+  background-image:
+    linear-gradient(
+      45deg,
+      rgba(195,45,23,.16) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(195,45,23,.16) 75%
+    ),
+    linear-gradient(
+      45deg,
+      rgba(195,45,23,.16) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(195,45,23,.16) 75%
+    );
+  background-size: 90px 90px;
+  background-position: 0 0, 45px 45px;
+}
+
+.hero-content {
+  max-width: 850px;
+  background: rgba(255,247,232,.94);
+  padding: 50px 35px;
+  border-radius: 24px;
+  border: 3px solid var(--brown);
+  box-shadow: 12px 12px 0 var(--red);
+}
+
+.eyebrow {
+  font-size: 14px;
+  letter-spacing: 3px;
+  font-weight: 900;
+  color: var(--red);
+}
+
+h1 {
+  font-size: clamp(48px, 8vw, 90px);
+  line-height: 1;
+  margin: 25px 0;
+  font-weight: 900;
+  color: var(--orange);
+  text-shadow:
+    3px 3px var(--brown),
+    -2px -2px var(--brown),
+    2px -2px var(--brown),
+    -2px 2px var(--brown);
+}
+
+.hero p {
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+.button {
+  display: inline-block;
+  background: var(--orange);
+  color: var(--brown);
+  border: 2px solid var(--brown);
+  padding: 17px 30px;
+  border-radius: 8px;
+  font-weight: 900;
+  font-size: 15px;
+  transition: .2s;
+  margin: 6px;
+}
+
+.button:hover {
+  background: #ffab63;
+  transform: translateY(-3px);
+}
+
+.button-dark {
+  background: var(--brown);
+  color: white;
+}
+
+.button-dark:hover {
+  background: #633324;
+}
+
+.section {
+  padding: 85px 20px;
+  text-align: center;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.section-title {
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 900;
+  margin: 0 0 18px;
+}
+
+.section-description {
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto 45px;
+}
+
+.food-section {
+  background: var(--brown);
+  color: white;
+}
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.food-card {
+  background: #4e2b1e;
+  padding: 35px 23px;
+  border-radius: 15px;
+  border: 1px solid #765044;
+}
+
+.food-icon {
+  font-size: 55px;
+  margin-bottom: 20px;
+}
+
+.food-card h3 {
+  font-size: 24px;
+  color: var(--orange);
+}
+
+.food-card p {
+  color: #f4e0d3;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.sauce-section {
+  background: var(--cream);
+}
+
+.sauce-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  text-align: left;
+}
+
+.sauce-photo {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: auto;
+  border-radius: 15px;
+  box-shadow: 12px 12px 0 var(--red);
+}
+
+.sauce-content h2 {
+  font-size: clamp(36px, 5vw, 58px);
+  margin: 15px 0 25px;
+  line-height: 1.1;
+  font-weight: 900;
+}
+
+.sauce-content p {
+  font-size: 19px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.campaign {
+  background: var(--red);
+  color: white;
+}
+
+.campaign-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.campaign-card {
+  background: var(--white);
+  color: var(--brown);
+  padding: 40px 25px;
+  border-radius: 15px;
+}
+
+.campaign-card h3 {
+  font-size: 25px;
+}
+
+.campaign-card p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.campaign-card .symbol {
+  font-size: 45px;
+}
+
+.location {
+  background: var(--white);
+}
+
+.location-box {
+  background: var(--cream);
+  border: 2px solid var(--brown);
+  padding: 45px 25px;
+  max-width: 700px;
+  margin: auto;
+  border-radius: 16px;
+}
+
+.location-box h3 {
+  font-size: 28px;
+}
+
+.location-box p {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+footer {
+  background: var(--brown);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+footer h2 {
+  font-size: 28px;
+}
+
+footer a {
+  color: var(--orange);
+  font-weight: bold;
+  margin: 0 12px;
+}
+
+footer p {
+  color: #e3c9b9;
+  font-size: 14px;
+}
+
+@media (max-width: 750px) {
+  .food-grid,
+  .sauce-grid,
+  .campaign-grid {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .nav-links {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .hero {
+    min-height: 550px;
+  }
+
+  .hero-content {
+    padding: 35px 20px;
+  }
+
+  .hero p {
+    font-size: 17px;
+  }
+
+  .section {
+    padding: 60px 18px;
+  }
+
+  .sauce-grid,
+  .sauce-content {
+    text-align: center;
+  }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- NAVIGATION BAR -->
-    <header>
-        <div class="container">
-            <nav aria-label="Main navigation">
+<!-- NAVIGATION -->
 
-                <a href="#home" class="logo">Elevate.</a>
+<nav>
+  <a href="index.html" class="logo">
+    THE <span>COOP</span>
+  </a>
 
-                <ul class="nav-links">
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact" class="nav-cta">Get Started</a></li>
-                </ul>
+  <div class="nav-links">
+    <a href="index.html">HOME</a>
+    <a href="#food">OUR FOOD</a>
+    <a href="ads.html">OUR ADS</a>
+    <a href="landing.html">NEW SAUCE</a>
+    <a href="#location">FIND US</a>
+  </div>
+</nav>
 
-            </nav>
-        </div>
-    </header>
 
+<!-- HERO SECTION -->
 
-    <!-- MAIN CONTENT -->
-    <main>
+<section class="hero">
 
-        <!-- HERO SECTION -->
-        <section class="hero" id="home">
-            <div class="container hero-content">
+  <div class="hero-content">
 
-                <!-- Hero Text -->
-                <div class="hero-text">
+    <span class="eyebrow">
+      WELCOME TO THE COOP
+    </span>
 
-                    <div class="eyebrow">Welcome to Elevate</div>
+    <h1>
+      WE DON'T PLAY CHICKEN.<br>
+      WE FRY IT.
+    </h1>
 
-                    <h1>Make your next big idea happen.</h1>
+    <p>
+      Crispy chicken fingers.
+      Golden crinkle-cut fries.
+      Thick Texas toast.
+      And sauces worth coming back for.
+    </p>
 
-                    <p>
-                        Discover a better way to reach your goals.
-                        We help you turn ideas into meaningful results
-                        with simple tools and a fresh perspective.
-                    </p>
+    <a href="#food" class="button">
+      EXPLORE OUR FOOD
+    </a>
 
-                    <a href="#contact" class="button button-primary">
-                        Get Started
-                    </a>
+    <a href="landing.html" class="button button-dark">
+      MEET THE NEW SAUCE
+    </a>
 
-                    <a href="#features" class="button button-secondary">
-                        Learn More
-                    </a>
+  </div>
 
-                </div>
+</section>
 
 
-                <!-- Hero Graphic -->
-                <div class="hero-image">
+<!-- FOOD SECTION -->
 
-                    <div class="hero-image-content">
+<section class="section food-section" id="food">
 
-                        <div class="icon" aria-hidden="true">🚀</div>
+  <div class="container">
 
-                        <h2>Think Bigger.</h2>
+    <h2 class="section-title">
+      GOOD FOOD. NO SHORTCUTS.
+    </h2>
 
-                        <p>
-                            Start building something great today.
-                        </p>
+    <p class="section-description">
+      We keep it simple and do it right.
+      Hand-breaded chicken fingers, crispy sides,
+      and house-made sauces.
+    </p>
 
-                    </div>
+    <div class="food-grid">
 
-                </div>
+      <div class="food-card">
 
-            </div>
-        </section>
+        <div class="food-icon">🍗</div>
 
+        <h3>CHICKEN FINGERS</h3>
 
+        <p>
+          Hand-breaded and fried golden.
+          Crispy on the outside and tender
+          on the inside.
+        </p>
 
-        <!-- FEATURES SECTION -->
-        <section class="features" id="features">
+      </div>
 
-            <div class="container">
+      <div class="food-card">
 
-                <h2 class="section-heading">
-                    Everything you need to grow
-                </h2>
+        <div class="food-icon">🍟</div>
 
-                <p class="section-description">
-                    Great results start with the right approach.
-                    Explore the benefits that help you move forward.
-                </p>
+        <h3>FRIES & TOAST</h3>
 
+        <p>
+          Golden crinkle-cut fries and
+          thick Texas toast that make
+          every meal complete.
+        </p>
 
-                <!-- Feature Cards -->
-                <div class="feature-grid">
+      </div>
 
+      <div class="food-card">
 
-                    <!-- Feature One -->
-                    <article class="feature-card">
+        <div class="food-icon">🥣</div>
 
-                        <div class="feature-icon" aria-hidden="true">
-                            💡
-                        </div>
+        <h3>SIGNATURE SAUCES</h3>
 
-                        <h3>Fresh Ideas</h3>
+        <p>
+          Find your favorite dip from
+          our selection of house-made
+          sauces.
+        </p>
 
-                        <p>
-                            Find creative solutions and discover new
-                            opportunities to bring your vision to life.
-                        </p>
+      </div>
 
-                    </article>
+    </div>
 
+    <div style="margin-top:35px;">
 
+      <a
+        href="https://thecoopchickenfingers.com/menu"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="button"
+      >
+        VIEW OUR MENU
+      </a>
 
-                    <!-- Feature Two -->
-                    <article class="feature-card">
+    </div>
 
-                        <div class="feature-icon" aria-hidden="true">
-                            📈
-                        </div>
+  </div>
 
-                        <h3>Real Progress</h3>
+</section>
 
-                        <p>
-                            Focus on what matters, track your progress,
-                            and keep moving toward your goals.
-                        </p>
 
-                    </article>
+<!-- NEW COOP SAUCE -->
 
+<section class="section sauce-section">
 
+  <div class="container sauce-grid">
 
-                    <!-- Feature Three -->
-                    <article class="feature-card">
+    <div>
 
-                        <div class="feature-icon" aria-hidden="true">
-                            🤝
-                        </div>
+      <img
+        src="images/coop-300x600.png"
+        alt="The Coop New Sauce Advertisement"
+        class="sauce-photo"
+        width="300"
+        height="600"
+        loading="lazy"
+      >
 
-                        <h3>Better Connections</h3>
+    </div>
 
-                        <p>
-                            Build meaningful relationships and create
-                            opportunities to grow together.
-                        </p>
+    <div class="sauce-content">
 
-                    </article>
+      <span class="eyebrow">
+        SOMETHING SAUCY IS HERE
+      </span>
 
+      <h2>
+        NEW "COOP" SAUCE!
+      </h2>
 
-                </div>
+      <p>
+        Your favorite chicken fingers
+        just found their perfect match.
+        Discover the new Coop Sauce
+        and take your dipping experience
+        to the next level.
+      </p>
 
-            </div>
+      <a href="landing.html" class="button">
+        DISCOVER THE SAUCE
+      </a>
 
-        </section>
+    </div>
 
+  </div>
 
+</section>
 
-        <!-- CALL-TO-ACTION SECTION -->
-        <section class="cta-section" id="contact">
 
-            <div class="container">
+<!-- ADVERTISING CAMPAIGN -->
 
-                <h2>Ready to get started?</h2>
+<section class="section campaign">
 
-                <p>
-                    Take the first step toward your next big opportunity.
-                </p>
+  <div class="container">
 
-                <a href="mailto:hello@example.com"
-                   class="button button-primary">
-                    Contact Us
-                </a>
+    <h2 class="section-title">
+      THE COOP SAUCE CAMPAIGN
+    </h2>
 
-            </div>
+    <p class="section-description">
+      Four digital advertisements.
+      One delicious new sauce.
+      See how we're spreading the word.
+    </p>
 
-        </section>
+    <div class="campaign-grid">
 
-    </main>
+      <div class="campaign-card">
 
+        <div class="symbol">📢</div>
 
+        <h3>OUR ADVERTISEMENTS</h3>
 
-    <!-- FOOTER -->
-    <footer>
+        <p>
+          Explore all four of our digital
+          advertisements promoting the
+          new Coop Sauce.
+        </p>
 
-        <div class="container">
+        <a href="ads.html" class="button">
+          VIEW OUR ADS
+        </a>
 
-            <p>
-                &copy; 2026 Elevate. All rights reserved.
-            </p>
+      </div>
 
-        </div>
+      <div class="campaign-card">
 
-    </footer>
+        <div class="symbol">🥣</div>
 
+        <h3>MEET THE SAUCE</h3>
+
+        <p>
+          Learn about the new Coop Sauce
+          and find out why it's the perfect
+          addition to your next meal.
+        </p>
+
+        <a href="landing.html" class="button">
+          EXPLORE THE SAUCE
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- LOCATION SECTION -->
+
+<section class="section location" id="location">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      COME HUNGRY. LEAVE HAPPY.
+    </h2>
+
+    <p class="section-description">
+      Find The Coop Chicken Fingers
+      and get your crispy chicken fix.
+    </p>
+
+    <div class="location-box">
+
+      <h3>THE COOP CHICKEN FINGERS</h3>
+
+      <p>
+        2420 Lincoln Way, Suite 103<br>
+        Ames, Iowa 50014
+      </p>
+
+      <p>
+        Chicken fingers, fries, toast,
+        and your favorite sauces.
+      </p>
+
+      <a
+        href="https://thecoopchickenfingers.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="button"
+      >
+        VISIT OFFICIAL WEBSITE
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <h2>THE COOP CHICKEN FINGERS</h2>
+
+  <p>WE DON'T PLAY CHICKEN. WE FRY IT.</p>
+
+  <div>
+    <a href="index.html">Home</a>
+    <a href="ads.html">Advertisements</a>
+    <a href="landing.html">Coop Sauce</a>
+  </div>
+
+  <p style="margin-top:30px;">
+    The Coop Sauce Digital Advertising Campaign
+  </p>
+
+</footer>
 
 </body>
-
 </html>
-```
