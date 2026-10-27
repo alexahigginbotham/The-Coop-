@@ -6,17 +6,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Meet the new Coop Sauce from The Coop Chicken Fingers. The perfect dipping partner for your favorite chicken fingers.">
+  <meta name="description"
+        content="Introducing the New Coop Sauce from The Coop Chicken Fingers.">
 
-  <title>New Coop Sauce | The Coop Chicken Fingers</title>
+  <title>New Coop Sauce | The Coop</title>
 
   <style>
+
     :root {
       --red: #b93622;
       --orange: #ff7924;
       --cream: #fff1d7;
       --brown: #30180f;
-      --white: #ffffff;
     }
 
     * {
@@ -38,32 +39,28 @@
 
     nav {
       background: var(--brown);
-      color: white;
+      padding: 20px 6%;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 15px;
-      padding: 18px 6%;
     }
 
     .logo {
-      font-size: 23px;
-      font-weight: 900;
       color: white;
       text-decoration: none;
-      text-transform: uppercase;
+      font-size: 24px;
+      font-weight: 900;
     }
 
     .logo span {
       color: var(--orange);
     }
 
-    nav a.nav-button {
-      background: var(--orange);
-      color: var(--brown);
-      padding: 12px 20px;
-      border-radius: 8px;
+    .nav-link {
+      color: white;
       text-decoration: none;
+      font-size: 14px;
       font-weight: bold;
     }
 
@@ -71,9 +68,10 @@
 
     .hero {
       text-align: center;
-      padding: 65px 20px 75px;
+      padding: 70px 20px;
 
       background-color: var(--cream);
+
       background-image:
         linear-gradient(
           45deg,
@@ -96,23 +94,23 @@
 
     .eyebrow {
       display: inline-block;
+      padding: 12px 22px;
       background: var(--brown);
       color: white;
-      padding: 10px 18px;
-      border-radius: 50px;
+      border-radius: 30px;
       font-size: 13px;
-      font-weight: 800;
+      font-weight: bold;
       letter-spacing: 2px;
-      text-transform: uppercase;
     }
 
     h1 {
-      font-size: clamp(48px, 8vw, 90px);
-      line-height: 1.02;
-      margin: 25px auto;
-      font-weight: 900;
+      font-size: clamp(45px, 8vw, 85px);
       color: var(--orange);
+      line-height: 1.05;
+      margin: 25px auto;
       max-width: 900px;
+      font-weight: 900;
+
       text-shadow:
         3px 3px 0 var(--brown),
         -2px -2px 0 var(--brown),
@@ -121,11 +119,11 @@
     }
 
     .hero p {
+      max-width: 650px;
+      margin: 0 auto 30px;
       font-size: 21px;
       line-height: 1.6;
-      max-width: 630px;
-      margin: 0 auto 30px;
-      font-weight: 600;
+      font-weight: bold;
     }
 
     .hero-image {
@@ -135,55 +133,57 @@
       height: auto;
       margin: 30px auto;
       border-radius: 12px;
-      box-shadow: 0 15px 35px rgba(48,24,15,.25);
+      box-shadow: 0 15px 35px rgba(0,0,0,.2);
     }
+
+    /* BUTTONS */
 
     .button {
       display: inline-block;
       background: var(--orange);
       color: var(--brown);
+      padding: 17px 32px;
+      border: 2px solid var(--brown);
+      border-radius: 8px;
       text-decoration: none;
       font-weight: 900;
-      font-size: 17px;
-      padding: 17px 30px;
-      border-radius: 9px;
-      border: 2px solid var(--brown);
-      transition: transform .2s, background .2s;
+      font-size: 16px;
+      transition: .2s;
     }
 
     .button:hover {
-      background: #ff9b50;
+      background: #ff9c55;
       transform: translateY(-3px);
     }
 
-    /* FEATURE SECTION */
+    /* FEATURES */
 
     .features {
       background: var(--brown);
       color: white;
-      padding: 75px 20px;
       text-align: center;
+      padding: 75px 20px;
     }
 
-    .section-content {
-      max-width: 1050px;
+    .section-container {
+      max-width: 1100px;
       margin: auto;
     }
 
     .section-title {
-      font-size: clamp(32px, 5vw, 48px);
-      font-weight: 900;
+      font-size: clamp(32px, 5vw, 50px);
       margin: 0 0 20px;
+      font-weight: 900;
     }
 
-    .section-subtitle {
+    .section-description {
       font-size: 18px;
       line-height: 1.7;
       max-width: 650px;
       margin: 0 auto 40px;
     }
 
-    .feature-grid {
+    .features-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
@@ -191,33 +191,29 @@
 
     .feature-card {
       background: #4b2a20;
-      padding: 35px 22px;
+      padding: 35px 20px;
       border-radius: 12px;
       border: 1px solid #795145;
     }
 
-    .feature-icon {
-      font-size: 36px;
-      margin-bottom: 15px;
-    }
-
     .feature-card h3 {
-      color: var(--orange);
       font-size: 22px;
-      margin: 10px 0;
+      color: var(--orange);
     }
 
     .feature-card p {
-      font-size: 15px;
-      line-height: 1.6;
+      line-height: 1.7;
       color: #f0ded3;
     }
 
-    /* PRODUCT SECTION */
+    .feature-icon {
+      font-size: 40px;
+    }
 
-    .product {
-      padding: 80px 20px;
-      text-align: center;
+    /* PRODUCT SHOWCASE */
+
+    .product-section {
+      padding: 90px 20px;
     }
 
     .product-grid {
@@ -230,23 +226,22 @@
     }
 
     .product-image {
-      width: 100%;
+      display: block;
       max-width: 300px;
+      width: 100%;
+      height: auto;
+      margin: auto;
       border-radius: 12px;
       box-shadow: 0 15px 30px rgba(0,0,0,.15);
     }
 
-    .product-text {
-      text-align: left;
-    }
-
-    .product-text h2 {
-      font-size: 45px;
+    .product-content h2 {
+      font-size: clamp(34px, 5vw, 50px);
       line-height: 1.1;
-      margin: 0 0 20px;
+      margin-bottom: 25px;
     }
 
-    .product-text p {
+    .product-content p {
       font-size: 18px;
       line-height: 1.7;
       margin-bottom: 25px;
@@ -254,80 +249,72 @@
 
     /* FINAL CTA */
 
-    .final-cta {
+    .cta {
       background: var(--red);
       color: white;
-      padding: 80px 20px;
+      padding: 85px 20px;
       text-align: center;
     }
 
-    .final-cta h2 {
-      font-size: clamp(36px, 6vw, 60px);
-      font-weight: 900;
+    .cta h2 {
+      font-size: clamp(38px, 6vw, 65px);
       margin: 0 0 20px;
     }
 
-    .final-cta p {
-      font-size: 19px;
+    .cta p {
+      font-size: 20px;
       line-height: 1.6;
       max-width: 600px;
-      margin: 0 auto 30px;
+      margin: 0 auto 35px;
     }
 
     /* FOOTER */
 
     footer {
       background: var(--brown);
-      color: #e7d2c7;
+      color: white;
       text-align: center;
-      padding: 30px 20px;
-      font-size: 14px;
+      padding: 35px 20px;
     }
 
     footer a {
       color: var(--orange);
       text-decoration: none;
+      font-weight: bold;
     }
 
     /* MOBILE */
 
     @media (max-width: 700px) {
 
-      nav {
-        padding: 15px 5%;
-      }
-
-      .logo {
-        font-size: 19px;
+      .features-grid,
+      .product-grid {
+        grid-template-columns: 1fr;
       }
 
       .hero {
-        padding: 45px 15px 60px;
+        padding: 50px 15px;
       }
 
       .hero p {
         font-size: 17px;
       }
 
-      .feature-grid,
-      .product-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .product-text {
-        text-align: center;
-      }
-
-      .product-text h2 {
-        font-size: 36px;
-      }
-
-      .features,
-      .product,
-      .final-cta {
+      .product-section {
         padding: 60px 20px;
       }
 
+      .product-content {
+        text-align: center;
+      }
+
+      nav {
+        padding: 18px 5%;
+      }
+
+      .logo {
+        font-size: 20px;
+      }
     }
 
   </style>
@@ -338,13 +325,15 @@
   <!-- NAVIGATION -->
 
   <nav>
+
     <a href="landing.html" class="logo">
       THE <span>COOP</span>
     </a>
 
-    <a href="#try-it" class="nav-button">
+    <a href="#try-it" class="nav-link">
       TRY THE SAUCE
     </a>
+
   </nav>
 
 
@@ -353,12 +342,10 @@
   <section class="hero">
 
     <span class="eyebrow">
-      The Coop Chicken Fingers Presents
+      THE COOP CHICKEN FINGERS PRESENTS
     </span>
 
-    <h1>
-      NEW "COOP" SAUCE!
-    </h1>
+    <h1>NEW "COOP" SAUCE!</h1>
 
     <p>
       Your favorite chicken fingers just found
@@ -368,36 +355,36 @@
 
     <img
       src="images/coop-300x250.png"
-      alt="The Coop's New Signature Sauce"
+      alt="New Coop Sauce Advertisement"
       class="hero-image"
       width="300"
       height="250"
     >
 
-    <a href="#try-it" class="button">
+    <a href="#discover" class="button">
       DISCOVER THE SAUCE
     </a>
 
   </section>
 
 
-  <!-- FEATURES -->
+  <!-- WHY TRY THE SAUCE -->
 
   <section class="features">
 
-    <div class="section-content">
+    <div class="section-container">
 
       <h2 class="section-title">
         MADE FOR THE PERFECT DIP.
       </h2>
 
-      <p class="section-subtitle">
+      <p class="section-description">
         Great chicken deserves a great sauce.
-        That's why we're putting our new
-        Coop Sauce in the spotlight.
+        Discover the new Coop Sauce and make
+        every chicken finger even better.
       </p>
 
-      <div class="feature-grid">
+      <div class="features-grid">
 
         <div class="feature-card">
 
@@ -406,8 +393,8 @@
           <h3>Chicken's Best Friend</h3>
 
           <p>
-            The perfect partner for your
-            favorite crispy chicken fingers.
+            The perfect dipping partner
+            for crispy chicken fingers.
           </p>
 
         </div>
@@ -419,8 +406,8 @@
           <h3>Dip Into Something New</h3>
 
           <p>
-            Discover a new way to enjoy
-            every bite at The Coop.
+            Give your favorite meal
+            a new dipping experience.
           </p>
 
         </div>
@@ -432,8 +419,8 @@
           <h3>Big Dipping Energy</h3>
 
           <p>
-            Make your next chicken finger
-            experience all about the sauce.
+            Bring a little extra excitement
+            to your next Coop meal.
           </p>
 
         </div>
@@ -445,9 +432,9 @@
   </section>
 
 
-  <!-- PRODUCT SECTION -->
+  <!-- PRODUCT SHOWCASE -->
 
-  <section class="product" id="discover">
+  <section class="product-section" id="discover">
 
     <div class="product-grid">
 
@@ -455,7 +442,7 @@
 
         <img
           src="images/coop-300x600.png"
-          alt="New Coop Sauce Advertisement"
+          alt="The Coop Sauce Half Page Advertisement"
           class="product-image"
           width="300"
           height="600"
@@ -464,7 +451,7 @@
 
       </div>
 
-      <div class="product-text">
+      <div class="product-content">
 
         <h2>
           YOUR NEW<br>
@@ -472,15 +459,15 @@
         </h2>
 
         <p>
-          Crispy chicken fingers. A delicious dip.
-          A combination made to enjoy together.
+          Crispy chicken fingers and a delicious
+          dipping sauce. Some things are just
+          better together.
         </p>
 
         <p>
-          The new Coop Sauce is ready to take
-          center stage. Whether you're grabbing
-          a quick bite or enjoying a full meal,
-          don't forget the sauce.
+          Introducing the new Coop Sauce.
+          Made to be enjoyed with your
+          favorite chicken finger meal.
         </p>
 
         <a href="#try-it" class="button">
@@ -496,24 +483,23 @@
 
   <!-- FINAL CALL TO ACTION -->
 
-  <section class="final-cta" id="try-it">
+  <section class="cta" id="try-it">
 
-    <h2>
-      READY TO GET SAUCY?
-    </h2>
+    <h2>READY TO GET SAUCY?</h2>
 
     <p>
-      The next time you're craving chicken fingers,
-      make it a Coop Sauce kind of day.
+      Your next favorite dip is calling.
+      Make your next chicken finger meal
+      a Coop Sauce kind of day.
     </p>
 
-    <a href="https://www.google.com/search?q=The+Coop+Chicken+Fingers"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="button">
-
+    <a
+      href="https://www.google.com/search?q=The+Coop+Chicken+Fingers"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="button"
+    >
       FIND THE COOP
-
     </a>
 
   </section>
@@ -524,19 +510,20 @@
   <footer>
 
     <p>
-      THE COOP CHICKEN FINGERS
+      <strong>THE COOP CHICKEN FINGERS</strong>
     </p>
 
     <p>
-      New "Coop" Sauce Digital Advertising Campaign
+      New "Coop" Sauce Advertising Campaign
     </p>
 
     <p>
-      <a href="ads.html">View Our Advertisements</a>
+      <a href="ads.html">
+        View Our Advertisements
+      </a>
     </p>
 
   </footer>
 
 </body>
 </html>
-
