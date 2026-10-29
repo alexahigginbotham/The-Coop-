@@ -1,529 +1,201 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description"
-        content="Introducing the New Coop Sauce from The Coop Chicken Fingers.">
+  <title>Get Saucy, Ames! | The Coop</title>
 
-  <title>New Coop Sauce | The Coop</title>
+  <meta
+    name="description"
+    content="Craving crispy chicken, golden fries, and delicious sauces? Visit The Coop in Ames or order online!"
+  >
 
-  <style>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
 
-    :root {
-      --red: #b93622;
-      --orange: #ff7924;
-      --cream: #fff1d7;
-      --brown: #30180f;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--cream);
-      color: var(--brown);
-    }
-
-    /* NAVIGATION */
-
-    nav {
-      background: var(--brown);
-      padding: 20px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .logo {
-      color: white;
-      text-decoration: none;
-      font-size: 24px;
-      font-weight: 900;
-    }
-
-    .logo span {
-      color: var(--orange);
-    }
-
-    .nav-link {
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    /* HERO */
-
-    .hero {
-      text-align: center;
-      padding: 70px 20px;
-
-      background-color: var(--cream);
-
-      background-image:
-        linear-gradient(
-          45deg,
-          rgba(185,54,34,.12) 25%,
-          transparent 25%,
-          transparent 75%,
-          rgba(185,54,34,.12) 75%
-        ),
-        linear-gradient(
-          45deg,
-          rgba(185,54,34,.12) 25%,
-          transparent 25%,
-          transparent 75%,
-          rgba(185,54,34,.12) 75%
-        );
-
-      background-size: 80px 80px;
-      background-position: 0 0, 40px 40px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      padding: 12px 22px;
-      background: var(--brown);
-      color: white;
-      border-radius: 30px;
-      font-size: 13px;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
-
-    h1 {
-      font-size: clamp(45px, 8vw, 85px);
-      color: var(--orange);
-      line-height: 1.05;
-      margin: 25px auto;
-      max-width: 900px;
-      font-weight: 900;
-
-      text-shadow:
-        3px 3px 0 var(--brown),
-        -2px -2px 0 var(--brown),
-        2px -2px 0 var(--brown),
-        -2px 2px 0 var(--brown);
-    }
-
-    .hero p {
-      max-width: 650px;
-      margin: 0 auto 30px;
-      font-size: 21px;
-      line-height: 1.6;
-      font-weight: bold;
-    }
-
-    .hero-image {
-      display: block;
-      width: 100%;
-      max-width: 300px;
-      height: auto;
-      margin: 30px auto;
-      border-radius: 12px;
-      box-shadow: 0 15px 35px rgba(0,0,0,.2);
-    }
-
-    /* BUTTONS */
-
-    .button {
-      display: inline-block;
-      background: var(--orange);
-      color: var(--brown);
-      padding: 17px 32px;
-      border: 2px solid var(--brown);
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 900;
-      font-size: 16px;
-      transition: .2s;
-    }
-
-    .button:hover {
-      background: #ff9c55;
-      transform: translateY(-3px);
-    }
-
-    /* FEATURES */
-
-    .features {
-      background: var(--brown);
-      color: white;
-      text-align: center;
-      padding: 75px 20px;
-    }
-
-    .section-container {
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .section-title {
-      font-size: clamp(32px, 5vw, 50px);
-      margin: 0 0 20px;
-      font-weight: 900;
-    }
-
-    .section-description {
-      font-size: 18px;
-      line-height: 1.7;
-      max-width: 650px;
-      margin: 0 auto 40px;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .feature-card {
-      background: #4b2a20;
-      padding: 35px 20px;
-      border-radius: 12px;
-      border: 1px solid #795145;
-    }
-
-    .feature-card h3 {
-      font-size: 22px;
-      color: var(--orange);
-    }
-
-    .feature-card p {
-      line-height: 1.7;
-      color: #f0ded3;
-    }
-
-    .feature-icon {
-      font-size: 40px;
-    }
-
-    /* PRODUCT SHOWCASE */
-
-    .product-section {
-      padding: 90px 20px;
-    }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 50px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .product-image {
-      display: block;
-      max-width: 300px;
-      width: 100%;
-      height: auto;
-      margin: auto;
-      border-radius: 12px;
-      box-shadow: 0 15px 30px rgba(0,0,0,.15);
-    }
-
-    .product-content h2 {
-      font-size: clamp(34px, 5vw, 50px);
-      line-height: 1.1;
-      margin-bottom: 25px;
-    }
-
-    .product-content p {
-      font-size: 18px;
-      line-height: 1.7;
-      margin-bottom: 25px;
-    }
-
-    /* FINAL CTA */
-
-    .cta {
-      background: var(--red);
-      color: white;
-      padding: 85px 20px;
-      text-align: center;
-    }
-
-    .cta h2 {
-      font-size: clamp(38px, 6vw, 65px);
-      margin: 0 0 20px;
-    }
-
-    .cta p {
-      font-size: 20px;
-      line-height: 1.6;
-      max-width: 600px;
-      margin: 0 auto 35px;
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: var(--brown);
-      color: white;
-      text-align: center;
-      padding: 35px 20px;
-    }
-
-    footer a {
-      color: var(--orange);
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 700px) {
-
-      .features-grid,
-      .product-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding: 50px 15px;
-      }
-
-      .hero p {
-        font-size: 17px;
-      }
-
-      .product-section {
-        padding: 60px 20px;
-      }
-
-      .product-content {
-        text-align: center;
-      }
-
-      nav {
-        padding: 18px 5%;
-      }
-
-      .logo {
-        font-size: 20px;
-      }
-    }
-
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
 </head>
 
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- Navigation -->
+  <header class="site-header">
+    <a class="logo" href="#home">THE <span>COOP.</span></a>
 
-  <nav>
-
-    <a href="landing.html" class="logo">
-      THE <span>COOP</span>
-    </a>
-
-    <a href="#try-it" class="nav-link">
-      TRY THE SAUCE
-    </a>
-
-  </nav>
-
-
-  <!-- HERO SECTION -->
-
-  <section class="hero">
-
-    <span class="eyebrow">
-      THE COOP CHICKEN FINGERS PRESENTS
-    </span>
-
-    <h1>NEW "COOP" SAUCE!</h1>
-
-    <p>
-      Your favorite chicken fingers just found
-      their perfect dipping partner.
-      Meet the sauce that brings it all together.
-    </p>
-
-    <img
-      src="images/coop-300x250.png"
-      alt="New Coop Sauce Advertisement"
-      class="hero-image"
-      width="300"
-      height="250"
+    <button
+      class="menu-toggle"
+      id="menu-toggle"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="main-navigation"
     >
+      ☰
+    </button>
 
-    <a href="#discover" class="button">
-      DISCOVER THE SAUCE
-    </a>
-
-  </section>
-
-
-  <!-- WHY TRY THE SAUCE -->
-
-  <section class="features">
-
-    <div class="section-container">
-
-      <h2 class="section-title">
-        MADE FOR THE PERFECT DIP.
-      </h2>
-
-      <p class="section-description">
-        Great chicken deserves a great sauce.
-        Discover the new Coop Sauce and make
-        every chicken finger even better.
-      </p>
-
-      <div class="features-grid">
-
-        <div class="feature-card">
-
-          <div class="feature-icon">🍗</div>
-
-          <h3>Chicken's Best Friend</h3>
-
-          <p>
-            The perfect dipping partner
-            for crispy chicken fingers.
-          </p>
-
-        </div>
-
-        <div class="feature-card">
-
-          <div class="feature-icon">🥣</div>
-
-          <h3>Dip Into Something New</h3>
-
-          <p>
-            Give your favorite meal
-            a new dipping experience.
-          </p>
-
-        </div>
-
-        <div class="feature-card">
-
-          <div class="feature-icon">🔥</div>
-
-          <h3>Big Dipping Energy</h3>
-
-          <p>
-            Bring a little extra excitement
-            to your next Coop meal.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- PRODUCT SHOWCASE -->
-
-  <section class="product-section" id="discover">
-
-    <div class="product-grid">
-
-      <div>
-
-        <img
-          src="images/coop-300x600.png"
-          alt="The Coop Sauce Half Page Advertisement"
-          class="product-image"
-          width="300"
-          height="600"
-          loading="lazy"
-        >
-
-      </div>
-
-      <div class="product-content">
-
-        <h2>
-          YOUR NEW<br>
-          FAVORITE DIP.
-        </h2>
-
-        <p>
-          Crispy chicken fingers and a delicious
-          dipping sauce. Some things are just
-          better together.
-        </p>
-
-        <p>
-          Introducing the new Coop Sauce.
-          Made to be enjoyed with your
-          favorite chicken finger meal.
-        </p>
-
-        <a href="#try-it" class="button">
-          I'M READY TO DIP
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- FINAL CALL TO ACTION -->
-
-  <section class="cta" id="try-it">
-
-    <h2>READY TO GET SAUCY?</h2>
-
-    <p>
-      Your next favorite dip is calling.
-      Make your next chicken finger meal
-      a Coop Sauce kind of day.
-    </p>
-
-    <a
-      href="https://www.google.com/search?q=The+Coop+Chicken+Fingers"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="button"
-    >
-      FIND THE COOP
-    </a>
-
-  </section>
-
-
-  <!-- FOOTER -->
-
-  <footer>
-
-    <p>
-      <strong>THE COOP CHICKEN FINGERS</strong>
-    </p>
-
-    <p>
-      New "Coop" Sauce Advertising Campaign
-    </p>
-
-    <p>
-      <a href="ads.html">
-        View Our Advertisements
+    <nav class="navigation" id="main-navigation">
+      <a href="#menu">Our Food</a>
+      <a href="#sauces">Our Sauces</a>
+      <a href="#hours">Hours</a>
+      <a
+        class="nav-order"
+        href="https://thecoopchickenfingers.com/ames"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ORDER ONLINE ↗
       </a>
-    </p>
+    </nav>
+  </header>
 
-  </footer>
+  <main>
 
-</body>
-</html>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">AMES, IOWA · CRISPY · SAUCY · DELICIOUS</p>
+
+        <h1>GET<br><span>SAUCY,</span><br>AMES!</h1>
+
+        <p class="hero-description">
+          Crispy chicken. Golden fries. Sauces worth talking about.
+          Your next favorite meal is just around the corner.
+        </p>
+
+        <div class="hero-buttons">
+          <a
+            class="button button-red"
+            href="https://thecoopchickenfingers.com/ames"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ORDER ONLINE ↗
+          </a>
+
+          <a class="button button-outline" href="#sauces">
+            EXPLORE OUR SAUCES ↓
+          </a>
+        </div>
+
+        <div class="hero-note">
+          <span class="note-icon">✳</span>
+          Made for dipping. Made for sharing. Made for cravings.
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="burst burst-one">CRISPY<br>GOODNESS!</div>
+        <div class="food-emoji">🍗</div>
+        <div class="fries-emoji">🍟</div>
+        <div class="sauce-emoji">🥣</div>
+        <div class="burst burst-two">DIP<br>IN!</div>
+        <div class="visual-caption">YOUR CRAVINGS CALLED.</div>
+      </div>
+
+      <div class="hero-bottom">
+        <span>GOOD FOOD. GREAT MOOD.</span>
+        <span>MADE FOR AMES, IOWA ↓</span>
+      </div>
+    </section>
+
+    <!-- Food Menu -->
+    <section class="food-section section-padding" id="menu">
+      <div class="section-heading">
+        <p class="eyebrow">THE LINEUP</p>
+        <h2>COME HUNGRY.<br><span>LEAVE HAPPY.</span></h2>
+
+        <p>
+          Whether you're grabbing lunch, feeding the family,
+          or satisfying a late-night craving, we've got you covered.
+        </p>
+      </div>
+
+      <div class="food-grid">
+
+        <article class="food-card chicken-card">
+          <div class="food-card-emoji">🍗</div>
+          <p class="card-label">THE CLASSIC</p>
+          <h3>CRISPY CHICKEN</h3>
+          <p>Crunchy, satisfying, and ready for your favorite sauce.</p>
+        </article>
+
+        <article class="food-card fries-card">
+          <div class="food-card-emoji">🍟</div>
+          <p class="card-label">THE SIDEKICK</p>
+          <h3>GOLDEN FRIES</h3>
+          <p>Perfect on their own. Even better with a little dip.</p>
+        </article>
+
+        <article class="food-card sauce-card">
+          <div class="food-card-emoji">🥣</div>
+          <p class="card-label">THE MAIN EVENT</p>
+          <h3>SAUCE IT UP</h3>
+          <p>Find your favorite flavor and make every bite count.</p>
+        </article>
+
+      </div>
+
+      <div class="center-button">
+        <a
+          class="button button-red"
+          href="https://thecoopchickenfingers.com/ames"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          CHECK OUT THE MENU ↗
+        </a>
+      </div>
+    </section>
+
+    <!-- Sauce Promotion -->
+    <section class="sauce-section section-padding" id="sauces">
+      <div class="sauce-intro">
+        <p class="eyebrow">THE SAUCE MAKES IT</p>
+        <h2>WHAT'S YOUR<br><span>DIP PERSONALITY?</span></h2>
+
+        <p>
+          Everyone has a go-to. Are you sticking with a classic,
+          trying something bold, or mixing it up?
+        </p>
+
+        <a
+          class="button button-light"
+          href="https://thecoopchickenfingers.com/ames"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          FIND YOUR FAVORITE ↗
+        </a>
+      </div>
+
+      <div class="sauce-options">
+
+        <article class="sauce-option">
+          <div class="sauce-icon">❤️</div>
+          <div>
+            <h3>THE CLASSIC</h3>
+            <p>For the tried-and-true dipper.</p>
+          </div>
+          <span class="sauce-number">01</span>
+        </article>
+
+        <article class="sauce-option">
+          <div class="sauce-icon">🔥</div>
+          <div>
+            <h3>THE HEAT SEEKER</h3>
+            <p>For those who like a little kick.</p>
+          </div>
+          <span class="sauce-number">02</span>
+        </article>
+
+        <article class="sauce-option">
+          <div class="sauce-icon">✨</div>
+          <div>
+            <h3>THE FLAVOR CHASER</h3>
+            <p>For anyone ready
