@@ -11,29 +11,25 @@
 :root {
   --red: #bd3520;
   --orange: #ff8126;
+  --sauce-bg: #ffae4b;
+  --sauce-drip: #e76814;
   --cream: #fff0d5;
   --brown: #32190f;
   --white: #fffaf2;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: var(--cream);
+  background: var(--sauce-bg);
   color: var(--brown);
   font-family: Arial, Helvetica, sans-serif;
 }
 
-a {
-  text-decoration: none;
-}
+a { text-decoration: none; }
 
 img {
   max-width: 100%;
@@ -62,9 +58,7 @@ nav {
   font-weight: 900;
 }
 
-.logo span {
-  color: var(--orange);
-}
+.logo span { color: var(--orange); }
 
 .nav-links {
   display: flex;
@@ -79,9 +73,7 @@ nav {
   font-weight: bold;
 }
 
-.nav-links a:hover {
-  color: var(--orange);
-}
+.nav-links a:hover { color: var(--orange); }
 
 /* BUTTONS */
 
@@ -108,9 +100,7 @@ nav {
   color: white;
 }
 
-.button-dark:hover {
-  background: #633324;
-}
+.button-dark:hover { background: #633324; }
 
 .button-light {
   background: var(--cream);
@@ -124,31 +114,40 @@ nav {
   justify-content: center;
 }
 
-/* HERO SECTION */
+/* ORANGE HERO WITH DRIPPING SAUCE */
 
 .hero {
-  background-color: var(--cream);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(
+    145deg,
+    #ffbf64 0%,
+    var(--sauce-bg) 53%,
+    #ff922e 100%
+  );
+  padding: 205px 6% 90px;
+}
 
-  background-image:
-    linear-gradient(
-      45deg,
-      rgba(189,53,32,.16) 25%,
-      transparent 25%,
-      transparent 75%,
-      rgba(189,53,32,.16) 75%
-    ),
-    linear-gradient(
-      45deg,
-      rgba(189,53,32,.16) 25%,
-      transparent 25%,
-      transparent 75%,
-      rgba(189,53,32,.16) 75%
-    );
+.sauce-drips {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 180px;
+  z-index: 0;
+  pointer-events: none;
+}
 
-  background-size: 90px 90px;
-  background-position: 0 0, 45px 45px;
+.sauce-drips svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 
-  padding: 90px 6%;
+.hero > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-grid {
@@ -177,7 +176,7 @@ nav {
 }
 
 .hero h1 span {
-  color: var(--orange);
+  color: #fff3cf;
   text-shadow: 3px 3px 0 var(--brown);
 }
 
@@ -189,13 +188,9 @@ nav {
   font-weight: 600;
 }
 
-.hero .button-row {
-  justify-content: flex-start;
-}
+.hero .button-row { justify-content: flex-start; }
 
-.hero-visual {
-  text-align: center;
-}
+.hero-visual { text-align: center; }
 
 .hero-visual img {
   width: 300px;
@@ -203,7 +198,7 @@ nav {
   box-shadow: 16px 16px 0 var(--red);
 }
 
-/* MARQUEE BANNER */
+/* BRAND BANNER */
 
 .marquee {
   background: var(--red);
@@ -215,7 +210,7 @@ nav {
   letter-spacing: 2px;
 }
 
-/* WHY THE SAUCE */
+/* SAUCE FEATURE SECTION */
 
 .sauce-section {
   background: var(--brown);
@@ -230,9 +225,7 @@ nav {
   align-items: center;
 }
 
-.sauce-image {
-  text-align: center;
-}
+.sauce-image { text-align: center; }
 
 .sauce-image img {
   display: block;
@@ -243,9 +236,7 @@ nav {
   box-shadow: 16px 16px 0 var(--orange);
 }
 
-.sauce-content .eyebrow {
-  color: var(--orange);
-}
+.sauce-content .eyebrow { color: var(--orange); }
 
 .section-title {
   font-size: clamp(36px, 5vw, 58px);
@@ -286,7 +277,7 @@ nav {
   line-height: 1.6;
 }
 
-/* MEALS SECTION */
+/* MEALS */
 
 .meals {
   background: var(--white);
@@ -359,9 +350,7 @@ nav {
   margin-bottom: 25px;
 }
 
-.ames-visual {
-  text-align: center;
-}
+.ames-visual { text-align: center; }
 
 .ames-visual img {
   width: 300px;
@@ -370,7 +359,7 @@ nav {
   box-shadow: 15px 15px 0 var(--red);
 }
 
-/* FINAL CALL TO ACTION */
+/* FINAL CTA */
 
 .final-cta {
   background: var(--red);
@@ -379,9 +368,7 @@ nav {
   padding: 100px 20px;
 }
 
-.final-cta .eyebrow {
-  color: var(--cream);
-}
+.final-cta .eyebrow { color: var(--cream); }
 
 .final-cta h2 {
   font-size: clamp(44px, 7vw, 76px);
@@ -448,18 +435,15 @@ footer p {
   font-weight: bold;
 }
 
-/* MOBILE STYLES */
+/* MOBILE */
 
 @media (max-width: 800px) {
-
   nav {
     flex-direction: column;
     text-align: center;
   }
 
-  .nav-links {
-    justify-content: center;
-  }
+  .nav-links { justify-content: center; }
 
   .hero-grid,
   .sauce-grid,
@@ -468,21 +452,15 @@ footer p {
     gap: 45px;
   }
 
-  .hero {
-    padding: 65px 22px;
-  }
+  .hero { padding: 165px 22px 65px; }
 
-  .hero-content {
-    text-align: center;
-  }
+  .sauce-drips { height: 150px; }
 
-  .hero .button-row {
-    justify-content: center;
-  }
+  .hero-content { text-align: center; }
 
-  .hero p {
-    font-size: 18px;
-  }
+  .hero .button-row { justify-content: center; }
+
+  .hero p { font-size: 18px; }
 
   .hero-visual img {
     max-width: calc(100% - 20px);
@@ -495,35 +473,25 @@ footer p {
   }
 
   .sauce-content,
-  .ames-content {
-    text-align: center;
-  }
+  .ames-content { text-align: center; }
 
-  .meal-grid {
-    grid-template-columns: 1fr;
-  }
+  .meal-grid { grid-template-columns: 1fr; }
 
   .sauce-points {
     grid-template-columns: 1fr;
     text-align: left;
   }
 
-  .final-cta {
-    padding: 75px 20px;
-  }
+  .final-cta { padding: 75px 20px; }
 
-  .final-cta p {
-    font-size: 18px;
-  }
-
+  .final-cta p { font-size: 18px; }
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+<!-- HEADER -->
 
 <nav>
   <a href="index.html" class="logo">
@@ -535,19 +503,79 @@ footer p {
     <a href="#sauce">OUR SAUCE</a>
     <a href="#meals">OUR FOOD</a>
     <a href="ads.html">OUR CAMPAIGN</a>
-    <a
-      href="https://thecoopchickenfingers.com/menu/ames"
-      target="_blank"
-      rel="noopener noreferrer">
+    <a href="https://thecoopchickenfingers.com/menu/ames"
+       target="_blank" rel="noopener noreferrer">
       ORDER ONLINE
     </a>
   </div>
 </nav>
 
-
-<!-- HERO -->
+<!-- HERO WITH DRIPPING SAUCE -->
 
 <section class="hero">
+
+  <div class="sauce-drips" aria-hidden="true">
+    <svg viewBox="0 0 1440 180"
+         preserveAspectRatio="none"
+         xmlns="http://www.w3.org/2000/svg">
+
+      <path fill="#bc4610"
+        d="M0 0 H1440 V35
+        C1404 35 1398 61 1379 61
+        C1360 61 1358 31 1340 31
+        C1312 31 1319 116 1290 116
+        C1260 116 1273 38 1240 38
+        C1211 38 1218 68 1188 68
+        C1158 68 1167 29 1130 29
+        C1100 29 1100 156 1065 156
+        C1030 156 1040 40 1008 40
+        C977 40 986 74 948 74
+        C911 74 922 32 882 32
+        C841 32 853 132 817 132
+        C782 132 795 38 756 38
+        C724 38 734 72 698 72
+        C664 72 667 32 635 32
+        C596 32 604 169 568 169
+        C527 169 545 38 503 38
+        C470 38 483 64 447 64
+        C413 64 428 32 392 32
+        C354 32 370 119 332 119
+        C293 119 310 32 270 32
+        C236 32 253 76 217 76
+        C176 76 186 35 145 35
+        C107 35 127 146 89 146
+        C47 146 66 33 27 33
+        C13 33 9 43 0 43 Z"/>
+
+      <path fill="#e76814"
+        d="M0 0 H1440 V25
+        C1404 25 1395 53 1379 53
+        C1359 53 1360 23 1340 23
+        C1307 23 1321 105 1290 105
+        C1262 105 1270 26 1240 26
+        C1207 26 1217 57 1188 57
+        C1157 57 1166 20 1130 20
+        C1094 20 1104 145 1065 145
+        C1029 145 1040 28 1008 28
+        C976 28 983 64 948 64
+        C911 64 922 24 882 24
+        C842 24 854 119 817 119
+        C780 119 794 27 756 27
+        C722 27 730 60 698 60
+        C663 60 669 24 635 24
+        C596 24 603 156 568 156
+        C529 156 545 27 503 27
+        C470 27 482 55 447 55
+        C413 55 426 24 392 24
+        C352 24 369 108 332 108
+        C293 108 309 23 270 23
+        C233 23 253 65 217 65
+        C179 65 186 26 145 26
+        C106 26 126 134 89 134
+        C47 134 65 24 27 24
+        C13 24 7 32 0 32 Z"/>
+    </svg>
+  </div>
 
   <div class="container hero-grid">
 
@@ -570,38 +598,28 @@ footer p {
       </p>
 
       <div class="button-row">
-
-        <a
-          href="https://thecoopchickenfingers.com/menu/ames"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button">
+        <a href="https://thecoopchickenfingers.com/menu/ames"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="button">
           ORDER NOW
         </a>
 
         <a href="#sauce" class="button button-dark">
           MEET THE SAUCE
         </a>
-
       </div>
 
     </div>
 
     <div class="hero-visual">
-
-      <img
-        src="images/coop-300x600.png"
-        alt="New Coop Sauce and chicken fingers"
-        width="300"
-        height="600"
-      >
-
+      <img src="images/coop-300x600.png"
+           alt="New Coop Sauce and chicken fingers"
+           width="300" height="600">
     </div>
 
   </div>
-
 </section>
-
 
 <!-- BRAND BANNER -->
 
@@ -610,27 +628,18 @@ footer p {
   TEXAS TOAST &bull; COOP SAUCE
 </div>
 
-
-<!-- SAUCE FEATURE -->
+<!-- WHY THE SAUCE -->
 
 <section class="sauce-section" id="sauce">
-
   <div class="container sauce-grid">
 
     <div class="sauce-image">
-
-      <img
-        src="images/coop-300x250.png"
-        alt="The Coop signature dipping sauce"
-        width="300"
-        height="250"
-        loading="lazy"
-      >
-
+      <img src="images/coop-300x250.png"
+           alt="The Coop signature dipping sauce"
+           width="300" height="250" loading="lazy">
     </div>
 
     <div class="sauce-content">
-
       <span class="eyebrow">
         THE DIP THAT MAKES THE DIFFERENCE
       </span>
@@ -653,7 +662,6 @@ footer p {
       </p>
 
       <div class="sauce-points">
-
         <div class="sauce-point">
           <strong>Signature Flavor</strong>
           <span>
@@ -669,28 +677,21 @@ footer p {
             fries, and more.
           </span>
         </div>
-
       </div>
 
-      <a
-        href="https://thecoopchickenfingers.com/menu/ames"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="button">
+      <a href="https://thecoopchickenfingers.com/menu/ames"
+         target="_blank" rel="noopener noreferrer"
+         class="button">
         TRY COOP SAUCE TODAY
       </a>
-
     </div>
 
   </div>
-
 </section>
-
 
 <!-- FEATURED MEALS -->
 
 <section class="meals" id="meals">
-
   <div class="container">
 
     <span class="eyebrow">
@@ -702,128 +703,88 @@ footer p {
     </h2>
 
     <p class="section-intro">
-      Whether you're grabbing food after
-      a long day on campus or feeding
-      the whole family, The Coop has
-      something to satisfy your cravings.
+      Whether you're grabbing food after a long
+      day on campus or feeding the whole family,
+      The Coop has something to satisfy your cravings.
     </p>
 
     <div class="meal-grid">
 
-      <!-- FINGER MEAL -->
-
       <div class="meal-card">
-
         <div class="meal-icon">🍗</div>
-
         <h3>THE FINGER MEAL</h3>
-
         <p>
           Hand-breaded chicken fingers,
           crinkle-cut fries, Texas toast,
           and your dipping sauce.
           A classic for a reason.
         </p>
-
-        <a
-          href="https://thecoopchickenfingers.com/menu/ames"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button">
+        <a href="https://thecoopchickenfingers.com/menu/ames"
+           target="_blank" rel="noopener noreferrer"
+           class="button">
           ORDER A MEAL
         </a>
-
       </div>
 
-
-      <!-- FAMILY PACK -->
-
       <div class="meal-card">
-
         <div class="meal-icon">🍟</div>
-
         <h3>THE FAMILY PACK</h3>
-
         <p>
-          Feeding a crowd?
-          Get chicken fingers, fries,
-          Texas toast, and a variety
+          Feeding a crowd? Get chicken fingers,
+          fries, Texas toast, and a variety
           of sauces for everyone to enjoy.
         </p>
-
-        <a
-          href="https://thecoopchickenfingers.com/menu/ames"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button">
+        <a href="https://thecoopchickenfingers.com/menu/ames"
+           target="_blank" rel="noopener noreferrer"
+           class="button">
           FEED THE FAMILY
         </a>
-
       </div>
 
-
-      <!-- COOP SANDWICH -->
-
       <div class="meal-card">
-
         <div class="meal-icon">🥪</div>
-
         <h3>THE COOP SANDWICH</h3>
-
         <p>
           Chicken fingers, bacon, cheese,
           and sauce between two slices
           of Texas toast.
           Now that's a serious sandwich.
         </p>
-
-        <a
-          href="https://thecoopchickenfingers.com/menu/ames"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button">
+        <a href="https://thecoopchickenfingers.com/menu/ames"
+           target="_blank" rel="noopener noreferrer"
+           class="button">
           VIEW THE MENU
         </a>
-
       </div>
 
     </div>
-
   </div>
-
 </section>
 
-
-<!-- AMES CONNECTION -->
+<!-- AMES SECTION -->
 
 <section class="ames-section">
-
   <div class="container ames-grid">
 
     <div class="ames-content">
-
-      <span class="eyebrow">
-        RIGHT HERE IN AMES
-      </span>
+      <span class="eyebrow">RIGHT HERE IN AMES</span>
 
       <h2 class="section-title">
         YOUR GO-TO CHICKEN SPOT.
       </h2>
 
       <p>
-        Long day of classes? Late-night
-        cravings? Looking for dinner
-        the whole family will enjoy?
+        Long day of classes? Late-night cravings?
+        Looking for dinner the whole family
+        will enjoy?
       </p>
 
       <p>
         The Coop has you covered.
-        From college students looking
-        for their next favorite meal
-        to families wanting something
-        everyone can agree on,
-        chicken fingers are always
-        a good choice.
+        From college students looking for their
+        next favorite meal to families wanting
+        something everyone can agree on,
+        chicken fingers are always a good choice.
       </p>
 
       <p>
@@ -831,37 +792,25 @@ footer p {
         every bite gets even better.
       </p>
 
-      <a
-        href="https://thecoopchickenfingers.com/menu/ames"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="button">
+      <a href="https://thecoopchickenfingers.com/menu/ames"
+         target="_blank" rel="noopener noreferrer"
+         class="button">
         EXPLORE THE MENU
       </a>
-
     </div>
 
     <div class="ames-visual">
-
-      <img
-        src="images/coop-300x250.png"
-        alt="Coop Sauce digital advertisement"
-        width="300"
-        height="250"
-        loading="lazy"
-      >
-
+      <img src="images/coop-300x250.png"
+           alt="Coop Sauce digital advertisement"
+           width="300" height="250" loading="lazy">
     </div>
 
   </div>
-
 </section>
 
-
-<!-- FINAL CONVERSION SECTION -->
+<!-- FINAL CALL TO ACTION -->
 
 <section class="final-cta">
-
   <div class="container">
 
     <span class="eyebrow">
@@ -881,36 +830,26 @@ footer p {
     </p>
 
     <div class="button-row">
-
-      <a
-        href="https://thecoopchickenfingers.com/menu/ames"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="button button-light">
+      <a href="https://thecoopchickenfingers.com/menu/ames"
+         target="_blank" rel="noopener noreferrer"
+         class="button button-light">
         ORDER ONLINE NOW
       </a>
 
       <a href="#sauce" class="button button-dark">
         LEARN ABOUT THE SAUCE
       </a>
-
     </div>
 
   </div>
-
 </section>
-
 
 <!-- LOCATION -->
 
 <section class="location">
-
   <div class="container">
 
-    <span class="eyebrow">
-      COME SEE US
-    </span>
-
+    <span class="eyebrow">COME SEE US</span>
     <h2>FIND THE COOP IN AMES</h2>
 
     <p>
@@ -918,50 +857,33 @@ footer p {
       Ames, Iowa 50014
     </p>
 
-    <a
-      href="https://thecoopchickenfingers.com/ames"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="button">
+    <a href="https://thecoopchickenfingers.com/ames"
+       target="_blank" rel="noopener noreferrer"
+       class="button">
       LOCATION & INFORMATION
     </a>
 
   </div>
-
 </section>
-
 
 <!-- FOOTER -->
 
 <footer>
-
   <h3>THE COOP CHICKEN FINGERS</h3>
 
-  <p>
-    GOOD CHICKEN. EVEN BETTER SAUCE.
-  </p>
+  <p>GOOD CHICKEN. EVEN BETTER SAUCE.</p>
 
   <div class="footer-links">
-
     <a href="index.html">Home</a>
-
     <a href="ads.html">Our Campaign</a>
-
     <a href="#sauce">Coop Sauce</a>
-
-    <a
-      href="https://thecoopchickenfingers.com/menu/ames"
-      target="_blank"
-      rel="noopener noreferrer">
+    <a href="https://thecoopchickenfingers.com/menu/ames"
+       target="_blank" rel="noopener noreferrer">
       Order Online
     </a>
-
   </div>
 
-  <p>
-    The Coop Sauce Digital Advertising Campaign
-  </p>
-
+  <p>The Coop Sauce Digital Advertising Campaign</p>
 </footer>
 
 </body>
